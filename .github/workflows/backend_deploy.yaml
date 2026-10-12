@@ -67,9 +67,9 @@ jobs:
           fi
 
           if [ "$debug_mode" = "true" ]; then
-            pnpm run deploy
+            pnpm run deploy -- --keep-vars
           else
-            if pnpm run deploy >/dev/null 2>&1; then
+            if pnpm run deploy -- --keep-vars >/dev/null 2>&1; then
               echo "Deploy succeeded"
             else
               code=$?
